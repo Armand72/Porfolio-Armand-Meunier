@@ -1,0 +1,15 @@
+.backgroundGrey {
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  right: 0%;
+  background-color: $colorBackground;
+}
+
+.backgroundOrange {
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  left: 0%;
+  background-color: $mainColor;
+}

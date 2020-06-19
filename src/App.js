@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Cube from "./components/Cube";
+import "./App.css";
+import "./assets/_main.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      classIcon: "scroll",
+    };
+  }
+
+  iconChange = (classIcon) => {
+    this.setState({ classIcon });
+    console.log(classIcon);
+  };
+
+  render() {
+    return (
+      <>
+        <div className="backgroundGrey"></div>
+        <div className="backgroundOrange"></div>
+        <div className="homepage">
+          <div className="containerMenu">
+            <nav className="containerMenu__navbar">
+              <ul>
+                <li onMouseEnter={() => this.iconChange("hammer")}>My works</li>
+                <li onMouseEnter={() => this.iconChange("skill")}>My skills</li>
+                <li onMouseEnter={() => this.iconChange("avatar")}>About</li>
+                <li onMouseEnter={() => this.iconChange("email")}>Contact</li>
+              </ul>
+            </nav>
+            <div className="containerMenu__logo">
+              <Cube classIcon={this.state.classIcon} />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;
