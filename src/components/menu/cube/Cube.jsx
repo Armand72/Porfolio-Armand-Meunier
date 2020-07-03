@@ -7,14 +7,15 @@ class Cube extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
+    const { classIcon } = this.props;
+
     return (
       <>
-        <div className={`container ${this.props.classIcon} `}>
+        <div className={`container ${classIcon} `}>
           {CubeData.map((props, index) => (
             <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
               whileHover={{ rotate: 15 }}
               transition={{
                 type: "spring",
@@ -22,7 +23,9 @@ class Cube extends Component {
                 damping: 20,
               }}
               key={props.id}
-            ></motion.div>
+            >
+          
+            </motion.div>
           ))}
         </div>
       </>

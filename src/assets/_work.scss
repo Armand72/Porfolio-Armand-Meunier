@@ -1,0 +1,102 @@
+.container-work {
+  &__main {
+    margin-top: 5%;
+  }
+}
+
+.background-noblob {
+  background-color: $mainColor;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.slide-carousel {
+  display: flex;
+  position: absolute;
+  cursor: url("https://github.com/chenglou/react-motion/raw/master/demos/demo8-draggable-list/cursor.png")
+      39 39,
+    auto;
+  &__card {
+    width: 350px;
+    height: 500px;
+    border-radius: 50px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 6px 11px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 6px 11px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 11px 3px rgba(0, 0, 0, 0.75);
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: inherit;
+      height: inherit;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50px;
+      padding: 30px;
+
+      & > div {
+        padding-top: 20px;
+      }
+
+      & > div > button {
+        width: 120px;
+        border: none;
+        border-radius: 50px;
+        height: 35px;
+        background: #4fcdab;
+        font-size: 1.2rem;
+        font-family: $titleFont;
+        cursor: pointer;
+        color: white;
+
+        font-weight: bold;
+      }
+
+      & > h2 {
+        color: white;
+        font-size: 2rem;
+        font-family: $titleFont;
+      }
+    }
+  }
+}
+
+.selector-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  color: white;
+  font-size: 2rem;
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 2%;
+    padding: 10px 30px;
+    border-radius: 50px;
+
+    & > p {
+      z-index: 2;
+      font-family: $titleFont;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    & > span {
+      background-color: $highlight;
+      height: 40px;
+      opacity: 0;
+
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: -30%;
+      top: -20%;
+      text-align: center;
+      border-radius: 25px;
+      z-index: -1;
+    }
+  }
+}

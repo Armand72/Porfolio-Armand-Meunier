@@ -83,7 +83,7 @@ $hammercropped: (28, 45, 62);
   @each $square in $list {
     & > :nth-child(#{$square}) {
       //   background: #a60303;
-      background: rgba(242, 161, 97, random() * (1 - 0.1) + 0.1);
+      background: rgba(167, 212, 255, random() * (1 - 0.3) + 0.3);
     }
   }
 }
@@ -92,8 +92,8 @@ $hammercropped: (28, 45, 62);
   @each $square in $list {
     & > :nth-child(#{$square}) {
       display: inline-block;
-      border-bottom: 30px solid rgba(242, 161, 97, random() * (1 - 0.1) + 0.1);
-      border-right: 30px solid $colorBackground;
+      border-bottom: 30px solid rgba(167, 212, 255, random() * (1 - 0.3) + 0.3);
+      border-right: 30px solid transparent;
     }
   }
 }
@@ -102,8 +102,8 @@ $hammercropped: (28, 45, 62);
   @each $square in $list {
     & > :nth-child(#{$square}) {
       display: inline-block;
-      border-bottom: 30px solid rgba(242, 161, 97, random() * (1 - 0.1) + 0.1);
-      border-left: 30px solid $colorBackground;
+      border-bottom: 30px solid rgba(167, 212, 255, random() * (1 - 0.3) + 0.3);
+      border-left: 30px solid transparent;
     }
   }
 }
@@ -112,8 +112,8 @@ $hammercropped: (28, 45, 62);
   @each $square in $list {
     & > :nth-child(#{$square}) {
       display: inline-block;
-      border-top: 30px solid rgba(242, 161, 97, random() * (1 - 0.1) + 0.1);
-      border-right: 30px solid $colorBackground;
+      border-top: 30px solid rgba(167, 212, 255, random() * (1 - 0.3) + 0.3);
+      border-right: 30px solid transparent;
     }
   }
 }
@@ -122,8 +122,8 @@ $hammercropped: (28, 45, 62);
   @each $square in $list {
     & > :nth-child(#{$square}) {
       display: inline-block;
-      border-top: 30px solid rgba(242, 161, 97, random() * (1 - 0.1) + 0.1);
-      border-left: 30px solid $colorBackground;
+      border-top: 30px solid rgba(167, 212, 255, random() * (1 - 0.3) + 0.3);
+      border-left: 30px solid transparent;
     }
   }
 }
@@ -163,6 +163,9 @@ $hammercropped: (28, 45, 62);
 .hammer {
   @include Fullcolor($hammer);
   @include CropedTopright($hammercropped);
+  & > * {
+    animation: hammeranim 1s;
+  }
 }
 
 $email: (
@@ -266,7 +269,105 @@ $emailTopright: (67, 84, 101, 118, 135, 152);
   @include CropedTopleft($emailTopleft);
 
   & > * {
-    animation: appearance 3s;
+    animation: emailanim 1s;
+  }
+}
+
+$menu: (
+  19,
+  35,
+  51,
+  67,
+  83,
+  20,
+  37,
+  54,
+  39,
+  24,
+  25,
+  41,
+  57,
+  73,
+  89,
+  27,
+  28,
+  29,
+  43,
+  59,
+  60,
+  61,
+  75,
+  91,
+  92,
+  93,
+  196,
+  148,
+  164,
+  180,
+  132,
+  183,
+  152,
+  136,
+  149,
+  168,
+  200,
+  166,
+  184,
+  138,
+  154,
+  170,
+  186,
+  202,
+  203,
+  204,
+  205,
+  189,
+  173,
+  157,
+  141
+);
+
+.menu {
+  @include Fullcolor($menu);
+
+  & > * {
+    animation: menuanim 1s;
+  }
+}
+
+$experience: (
+  62,
+  61,
+  60,
+  59,
+  75,
+  91,
+  107,
+  123,
+  139,
+  108,
+  109,
+  110,
+  78,
+  94,
+  86,
+  102
+);
+$experienceBottomleft: (85, 68, 51, 119, 136);
+$experienceBottomright: (87, 72, 57, 117, 132);
+$experienceTopleft: (71, 56, 101, 116, 131);
+$experienceTopright: (69, 52, 103, 120, 137);
+
+.experience {
+  @include Fullcolor($experience);
+
+  @include CropedBottomleft($experienceBottomleft);
+  @include CropedBottomright($experienceBottomright);
+  @include CropedTopright($experienceTopright);
+  @include CropedTopleft($experienceTopleft);
+
+  & > * {
+    animation: experienceanim 1s;
   }
 }
 
@@ -335,9 +436,13 @@ $skill: (
 
 .skill {
   @include Fullcolor($skill);
+
+  & > * {
+    animation: appearance 1s;
+  }
 }
 
-$avatar: (
+$about: (
   35,
   46,
   36,
@@ -388,19 +493,23 @@ $avatar: (
   108
 );
 
-$avatarTopLeft: (35, 85, 88, 91);
-$avatarTopright: (46, 86, 89, 92);
-$avatarBottomLeft: (147, 101, 104, 107);
-$avatarBottomRight: (158, 102, 105, 108);
+$aboutTopLeft: (35, 85, 88, 91);
+$aboutTopright: (46, 86, 89, 92);
+$aboutBottomLeft: (147, 101, 104, 107);
+$aboutBottomRight: (158, 102, 105, 108);
 
-.avatar {
-  @include Fullcolor($avatar);
+.about {
+  @include Fullcolor($about);
   @include CropedBottomleft(172);
   @include CropedBottomright(173);
-  @include radiusTopLeft($avatarTopLeft);
-  @include radiusTopRight($avatarTopright);
-  @include radiusBottomLeft($avatarBottomLeft);
-  @include radiusBottomRight($avatarBottomRight);
+  @include radiusTopLeft($aboutTopLeft);
+  @include radiusTopRight($aboutTopright);
+  @include radiusBottomLeft($aboutBottomLeft);
+  @include radiusBottomRight($aboutBottomRight);
+
+  & > * {
+    animation: appearance 1s;
+  }
 }
 
 $scroll: (
@@ -470,6 +579,10 @@ $scrollBottomRight: (204, 89);
   & > :nth-child(89) {
     animation: scrollDown 3s infinite linear;
   }
+
+  & > * {
+    animation: appearance 1s;
+  }
 }
 
 @keyframes scrollDown {
@@ -492,8 +605,54 @@ $scrollBottomRight: (204, 89);
 @keyframes appearance {
   0% {
     opacity: 0;
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hammeranim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes emailanim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes menuanim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes experienceanim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

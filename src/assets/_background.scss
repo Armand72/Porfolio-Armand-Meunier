@@ -1,15 +1,8 @@
-.backgroundGrey {
-  height: 100vh;
-  width: 50vw;
+.backgroundFullScreen {
   position: absolute;
-  right: 0%;
-  background-color: $colorBackground;
-}
-
-.backgroundOrange {
   height: 100vh;
-  width: 50vw;
-  position: absolute;
-  left: 0%;
+  width: 100vw;
   background-color: $mainColor;
+  z-index: 0;
+  top: 0;
 }

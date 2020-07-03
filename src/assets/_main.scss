@@ -2,6 +2,9 @@
 * base section : reset, global
 *
 **/
+body {
+  overflow: hidden;
+}
 
 @import "./reset";
 @import "./font";
@@ -9,3 +12,7 @@
 @import "./cube";
 @import "./background";
 @import "./homepage";
+@import "./blob";
+@import "./work";
+@import "./title";
+@import "./about";

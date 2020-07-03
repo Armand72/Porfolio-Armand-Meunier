@@ -1,0 +1,23 @@
+.title-part {
+  color: white;
+  font-family: "Suravaram", serif;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 5%;
+
+  & > h1 {
+    font-size: 5rem;
+    margin: 0;
+  }
+
+  & > span {
+    background-color: rgb(167, 212, 255);
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    border-radius: 50px;
+  }
+}
