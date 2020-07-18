@@ -79,16 +79,14 @@ class About extends Component {
           </div>
           <div className="container-about__skills">
             {skillData.map((props, index) => (
-              <>
-                <div className="container-about__items" key={index}>
-                  <div className="container-about__image">
-                    <img src={props.url} alt={props.title} />
-                  </div>
-                  <div className="container-about__title">
-                    <p>{props.title}</p>
-                  </div>
+              <div className="container-about__items" key={index}>
+                <div className="container-about__image">
+                  <img src={props.url} alt={props.title} />
                 </div>
-              </>
+                <div className="container-about__title">
+                  <p>{props.title}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
