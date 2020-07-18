@@ -17,7 +17,7 @@ app.use(
 );
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 const transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com", // hostname
