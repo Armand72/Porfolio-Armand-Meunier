@@ -180,6 +180,8 @@ class App extends Component {
               <div className="container-modal__callcontainer">
                 {website.website !== "" && (
                   <motion.a
+                    src={website}
+                    target="_blank"
                     whileHover="menu"
                     className="container-modal__button"
                   >
@@ -193,6 +195,8 @@ class App extends Component {
 
                 {github.github !== "" && (
                   <motion.a
+                    src={github}
+                    target="_blank"
                     whileHover="menu"
                     className="container-modal__button"
                   >
