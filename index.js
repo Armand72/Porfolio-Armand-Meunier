@@ -24,7 +24,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-const server = app.listen(parseInt(SERVER_ADDRESS), () => {
-  console.log(`server is listening on port ${SERVER_ADDRESS}`);
+const port = process.env.PORT || SERVER_ADDRESS;
+
+const server = app.listen(parseInt(port), () => {
+  console.log(`server is listening on port ${port}`);
 });
 module.exports = server;
