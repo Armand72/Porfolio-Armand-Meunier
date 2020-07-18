@@ -176,6 +176,14 @@
     }
     display: flex;
     justify-content: space-evenly;
+
+    & > a {
+      color: white;
+    }
+
+    & > a:link {
+      text-decoration: none;
+    }
   }
 
   &__button {
