@@ -1,0 +1,43 @@
+.container-about {
+  display: flex;
+  flex-direction: column;
+
+  &__skills {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  &__paragraph {
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+    @media (min-width: $mobile) and (max-width: $large) {
+      font-size: 1.5rem;
+    }
+    padding: 50px;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  &__items {
+    margin-top: 2%;
+  }
+  &__image {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    text-align: center;
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+  }
+}

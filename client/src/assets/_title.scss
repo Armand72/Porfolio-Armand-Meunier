@@ -1,0 +1,46 @@
+.title-part {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 5%;
+
+  & > h1 {
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+    }
+    font-size: 5rem;
+    margin: 0;
+  }
+
+  & > span {
+    background-color: $importantColor;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    border-radius: 50px;
+  }
+}
+
+.title-homepage {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 5%;
+
+  & > span {
+    @media (max-width: $mobile) {
+      width: 80%;
+      right: 50%;
+      transform: translate(50%, 0);
+    }
+    background-color: $importantColor;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    border-radius: 50px;
+  }
+}
