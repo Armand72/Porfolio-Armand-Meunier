@@ -51,7 +51,7 @@
 }
 
 .mobile-parent {
-  position: relative;
+  position: fixed;
   height: 50px;
-  display: contents;
+  bottom: 0;
 }
