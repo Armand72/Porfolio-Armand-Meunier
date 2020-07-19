@@ -3,6 +3,10 @@
   flex-direction: column;
 
   &__skills {
+    @media (max-width: $mobile) {
+      padding: 10px 20px;
+    }
+
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -44,4 +48,10 @@
     padding: 10px;
     font-weight: bold;
   }
+}
+
+.mobile-parent {
+  position: relative;
+  height: 50px;
+  display: contents;
 }

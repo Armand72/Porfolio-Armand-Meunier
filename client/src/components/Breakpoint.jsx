@@ -81,7 +81,9 @@ const MyComponent = (props) => {
 export default function Breakpoint(activated) {
   return (
     <ViewportProvider>
-      <MyComponent activated={activated} />
+      <div className="mobile-parent">
+        <MyComponent activated={activated} />
+      </div>
     </ViewportProvider>
   );
 }

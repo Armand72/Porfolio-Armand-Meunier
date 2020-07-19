@@ -17,7 +17,7 @@ import "./assets/_main.scss";
 const Work = lazy(() => import("./pages/Work"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const renderLoad = () => <p>Loading...........</p>;
+const renderLoad = () => <p></p>;
 
 const Image = styled.div`
   @media (max-width: 576px) {

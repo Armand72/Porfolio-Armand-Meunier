@@ -33,9 +33,9 @@ class Homepage extends Component {
 
     return (
       <>
-        {/* <div className="container-fullname">
+        <div className="container-fullname">
           <Fullname />
-        </div> */}
+        </div>
         <div className="container-fullname__mobile">
           <h1>Armand</h1>
           <h1>Meunier</h1>
