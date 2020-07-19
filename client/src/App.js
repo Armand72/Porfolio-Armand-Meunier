@@ -17,6 +17,7 @@ import "./assets/_main.scss";
 const Work = lazy(() => import("./pages/Work"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const renderLoad = () => <p>Loading...........</p>;
 
 const Image = styled.div`
   @media (max-width: 576px) {
@@ -266,7 +267,7 @@ class App extends Component {
               </ParallaxLayer>
             </VisibilitySensor>
 
-            <Suspense>
+            <Suspense fallback={renderLoad()}>
               <ParallaxLayer offset={1} speed={0}>
                 <div className="background-black"></div>
 
@@ -280,7 +281,7 @@ class App extends Component {
               </ParallaxLayer>
             </Suspense>
 
-            <Suspense>
+            <Suspense fallback={renderLoad()}>
               <ParallaxLayer offset={2} speed={0}>
                 <VisibilitySensor
                   minTopValue={550}
@@ -292,7 +293,7 @@ class App extends Component {
               </ParallaxLayer>
             </Suspense>
 
-            <Suspense>
+            <Suspense fallback={renderLoad()}>
               <ParallaxLayer offset={3} speed={0}>
                 <div className="background-black"></div>
                 <VisibilitySensor
