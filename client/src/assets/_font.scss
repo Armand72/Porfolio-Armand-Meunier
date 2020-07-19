@@ -1,3 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@700&display=swap");
 
-$titleFont: "Alegreya", serif;
+// $titleFont: "Alegreya", serif;
+
+// $font-path: "./font/Alegreya_Sans";
+
+// @mixin font-face($style-name, $file, $family) {
+//   $filepath: "font/" + $family + "/" + $file;
+//   @font-face {
+//     font-family: "#{$style-name}";
+//     src: url($filepath + ".ttf");
+//   }
+// }
+
+// @include font-face("Alegreya", "AlegreyaSans-Bold", "Alegreya_Sans");
+
+//   font-family: "bingo"
+//   src: url($font-path) format("ttf")
+// }
+$titleFont: "Alegreya";

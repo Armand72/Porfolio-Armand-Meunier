@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import Homepage from "./pages/Homepage";
-import Work from "./pages/Work";
+
 // import Skill from "./pages/Skill";
 // import Experience from "./pages/Experience";
 import styled from "styled-components";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+
 import BlobBlue from "./components/background/blobBlue";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import VisibilitySensor from "react-visibility-sensor";
@@ -13,8 +12,11 @@ import Breakpoint from "./components/Breakpoint";
 import { motion } from "framer-motion";
 import Error from "./pages/Error";
 import parse from "html-react-parser";
-
 import "./assets/_main.scss";
+
+const Work = lazy(() => import("./pages/Work"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const Image = styled.div`
   @media (max-width: 576px) {
@@ -50,6 +52,9 @@ class App extends Component {
       activated: "home",
       seeError: false,
       errorMessage: "",
+      contact: false,
+      about: false,
+      work: false,
     };
   }
 
@@ -154,12 +159,15 @@ class App extends Component {
 
     return (
       <>
+        {/* Error message for contact */}
         {this.state.seeError && (
           <Error
             message={this.state.errorMessage}
             switchError={this.switchError}
           />
         )}
+
+        {/* Modal for work */}
 
         {this.state.modalVisible === true && (
           <div className="background-modal">
@@ -211,11 +219,14 @@ class App extends Component {
             </div>
           </div>
         )}
+
+        {/* Menu for mobile */}
         <Breakpoint
           activated={this.state.activated}
           scrollToMobile={scrollToMobile}
         ></Breakpoint>
 
+        {/* mainpage */}
         <div className="background-noblob">
           <BlobBlue
             width="50"
@@ -246,7 +257,7 @@ class App extends Component {
               partialVisibility={true}
               onChange={this.DeactivateMenu}
             >
-              <ParallaxLayer offset={0} speed={0.1}>
+              <ParallaxLayer offset={0} speed={0}>
                 <Homepage
                   scrollTo={this.scrollTo}
                   switchMenu={this.switchMenu}
@@ -254,43 +265,45 @@ class App extends Component {
                 />
               </ParallaxLayer>
             </VisibilitySensor>
-            <ParallaxLayer offset={1} speed={0.1}>
-              <div className="background-black"></div>
 
-              <VisibilitySensor
-                minTopValue={550}
-                partialVisibility={true}
-                onChange={this.ActivateMenu}
-              >
-                <Work switchModal={this.switchModal} />
-              </VisibilitySensor>
-            </ParallaxLayer>
-            {/* 
-            <ParallaxLayer offset={2} speed={0.2}>
-              <Skill />
-            </ParallaxLayer>
-            <ParallaxLayer offset={3} speed={0.2}>
-              <Experience />
-            </ParallaxLayer> */}
-            <ParallaxLayer offset={2} speed={0.2}>
-              <VisibilitySensor
-                minTopValue={550}
-                partialVisibility={true}
-                onChange={this.observeAbout}
-              >
-                <About />
-              </VisibilitySensor>
-            </ParallaxLayer>
-            <ParallaxLayer offset={3} speed={0.2}>
-              <div className="background-black"></div>
-              <VisibilitySensor
-                minTopValue={550}
-                partialVisibility={true}
-                onChange={this.observeContact}
-              >
-                <Contact errorMessage={this.errorMessage} />
-              </VisibilitySensor>
-            </ParallaxLayer>
+            <Suspense>
+              <ParallaxLayer offset={1} speed={0}>
+                <div className="background-black"></div>
+
+                <VisibilitySensor
+                  minTopValue={550}
+                  partialVisibility={true}
+                  onChange={this.ActivateMenu}
+                >
+                  <Work switchModal={this.switchModal} />
+                </VisibilitySensor>
+              </ParallaxLayer>
+            </Suspense>
+
+            <Suspense>
+              <ParallaxLayer offset={2} speed={0}>
+                <VisibilitySensor
+                  minTopValue={550}
+                  partialVisibility={true}
+                  onChange={this.observeAbout}
+                >
+                  <About />
+                </VisibilitySensor>
+              </ParallaxLayer>
+            </Suspense>
+
+            <Suspense>
+              <ParallaxLayer offset={3} speed={0}>
+                <div className="background-black"></div>
+                <VisibilitySensor
+                  minTopValue={550}
+                  partialVisibility={true}
+                  onChange={this.observeContact}
+                >
+                  <Contact errorMessage={this.errorMessage} />
+                </VisibilitySensor>
+              </ParallaxLayer>
+            </Suspense>
           </Parallax>
         </div>
       </>

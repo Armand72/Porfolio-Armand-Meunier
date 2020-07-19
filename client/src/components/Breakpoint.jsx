@@ -34,7 +34,7 @@ const MobileMenu = (props) => (
       className={props.activated === "home" && "menu-highlight"}
     >
       <div>
-        <img src="./home.png" alt="" />
+        <img src="./home.webp" alt="" />
       </div>
     </div>
     <div
@@ -42,7 +42,7 @@ const MobileMenu = (props) => (
       className={props.activated === "portfolio" && "menu-highlight"}
     >
       <div>
-        <img src="./portfolio.png" alt="" />
+        <img src="./portfolio.webp" alt="" />
       </div>
     </div>
     <div
@@ -50,7 +50,7 @@ const MobileMenu = (props) => (
       className={props.activated === "about" && "menu-highlight"}
     >
       <div>
-        <img src="./about.png" alt="" />
+        <img src="./about.webp" alt="" />
       </div>
     </div>
     <div
@@ -58,7 +58,7 @@ const MobileMenu = (props) => (
       className={props.activated === "message" && "menu-highlight"}
     >
       <div>
-        <img src="./message.png" alt="" />
+        <img src="./message.webp" alt="" />
       </div>
     </div>
   </div>

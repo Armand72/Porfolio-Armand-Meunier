@@ -7,8 +7,8 @@ import Cards from "../components/Cards";
 const imageData = [
   {
     title: "EdocGroup",
-    img: "/edocPersoLarge.jpg",
-    large: "/edocPersoLarge.jpg",
+    img: "/edocPersoLarge.webp",
+    large: "/edocPersoLarge.webp",
     text:
       "Stage au cours de ma formation de <span>développeur web</span>. J'ai pu travailler sur Vue js en tant que développeur <span>front-end</span>. J'ai eu l'occasion d'être entouré des collaborateurs aux <span>compétences</span> diverses (ux designer, back-end, dev ops, QA engineer), le tout dans une optique de management de projet <span>Scrum</span>. J'ai eu l'opportunité de travailler sur une librairie comme <span>Storybook</span> et de travailler avec <span>Gitlab et Jira</span> afin de d'aider dans l'élaboration de leur solution logicielle.",
     summary:
@@ -20,8 +20,8 @@ const imageData = [
   },
   {
     title: "En voyage vers soi",
-    img: "/envoyageverssoiLarge.jpg",
-    large: "/envoyageverssoiLarge.jpg",
+    img: "/envoyageverssoiLarge.webp",
+    large: "/envoyageverssoiLarge.webp",
     text:
       "<span>Projet client</span> réalisé à l'école en React et node. <span>En équipe</span>, nous nous sommes occupés de chaque aspect du projet.(maquettes, développement, relation avec le client, déploiement du site web). Ce site permet au client de présenter ses prestations et d'être contacté par <span>un formulaire de contact</span>. Le site est sécurisé par un système de <span>tokens</span>. Une page administrateur a été réalisée à la demande du client utilisant <span>une architecture API rest</span>. Le SGBD utilisé est <span>MySql</span>.",
     summary: "Projet client réalisé au cours de ma formation.",
@@ -33,8 +33,8 @@ const imageData = [
 
   {
     title: "Babysteps",
-    img: "/babystepsLarge.jpg",
-    large: "/babystepsLarge.jpg",
+    img: "/babystepsLarge.webp",
+    large: "/babystepsLarge.webp",
     text:
       "Projet réalisé dans le cadre du passage du titre <span>RNCP  'développeur web et mobile'</span>. Développé avec React et Node js, le projet a pour but de centraliser des informations personnelles sur un enfant afin de les partager aux personnes qui s'en occupent pour cerner leurs besoins. Cette application comporte une sécurisation avec <span>les tokens</span>, une architecture <span>API rest</span>, un système de messagerie avec <span>socket.io</span> de même qu'une internationalisation avec <span>react-intl</span>. Le SGBD utilisé est <span>MySql</span>.",
     summary: "Projet réalisé pour le passage du titre RNCP.",
@@ -45,8 +45,8 @@ const imageData = [
   },
   {
     title: "Timeline DND",
-    img: "/timelineLarge.jpg",
-    large: "/timelineLarge.jpg",
+    img: "/timelineLarge.webp",
+    large: "/timelineLarge.webp",
     text:
       "Projet personnel pour s'entraîner sur le <span>Drag and Drop</span> et sur <span>les hooks</span> avec react. Le but étant de pouvoir réaliser <span>une timeline personnalisée</span>. Projet utilisant React et <span>react-beautiful-dnd</span>.",
     summary:
@@ -58,8 +58,8 @@ const imageData = [
   },
   {
     title: "Portfolio",
-    img: "/portfolioMobile.jpg",
-    large: "/portfolioLarge.jpg",
+    img: "/portfolioMobile.webp",
+    large: "/portfolioLarge.webp",
     text:
       "Ce projet a été réalisé afin de présenter de manière précise et concise mon profil à travers <span>une UX</span> permettant à l'utilisateur d'avoir accès directement aux <span>informations pertinentes</span> (boutons call to action, slider, position des différentes catégories). React a été utilisé pour ce projet ainsi que <span>node et nodemailer</span> pour <span>le formulaire de contact</span>. Les animations ont été réalisés avec <span>framer-motion</span>.",
     summary: "Le portfolio ici présent.",
