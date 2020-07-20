@@ -2,15 +2,8 @@ import React, { Component } from "react";
 import Cube from "../components/menu/cube/Cube";
 import { motion } from "framer-motion";
 import Fullname from "../components/Fullname";
-import * as Scroll from "react-scroll";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+
+import { Link } from "react-scroll";
 
 class Homepage extends Component {
   constructor(props) {

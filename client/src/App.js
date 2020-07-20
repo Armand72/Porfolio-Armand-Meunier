@@ -1,14 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import Homepage from "./pages/Homepage";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { animateScroll as scroll, scroller } from "react-scroll";
 // import Skill from "./pages/Skill";
 // import Experience from "./pages/Experience";
 import styled from "styled-components";
