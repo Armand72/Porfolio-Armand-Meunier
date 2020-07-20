@@ -17,7 +17,9 @@
   cursor: url("/cursor.webp") 39 39, auto;
   &__card {
     @media (max-width: $mobile) {
-      width: 325px;
+      width: 280px;
+      height: 400px;
+      border-radius: 25px;
     }
     width: 350px;
     height: 500px;
@@ -28,6 +30,9 @@
     box-shadow: 0px 6px 11px 3px rgba(0, 0, 0, 0.75);
 
     &--info {
+      @media (max-width: $mobile) {
+        border-radius: 25px;
+      }
       @media (max-width: $tablet) {
         opacity: 1 !important;
       }
@@ -78,7 +83,7 @@
   position: absolute;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 

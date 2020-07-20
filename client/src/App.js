@@ -1,22 +1,29 @@
 import React, { Component, lazy, Suspense } from "react";
 import Homepage from "./pages/Homepage";
-
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 // import Skill from "./pages/Skill";
 // import Experience from "./pages/Experience";
 import styled from "styled-components";
-
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 import BlobBlue from "./components/background/blobBlue";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import VisibilitySensor from "react-visibility-sensor";
 import Breakpoint from "./components/Breakpoint";
 import { motion } from "framer-motion";
 import Error from "./pages/Error";
 import parse from "html-react-parser";
+
 import "./assets/_main.scss";
 
 const Work = lazy(() => import("./pages/Work"));
-const About = lazy(() => import("./pages/About"));
-const Contact = lazy(() => import("./pages/Contact"));
 const renderLoad = () => <p></p>;
 
 const Image = styled.div`
@@ -53,9 +60,6 @@ class App extends Component {
       activated: "home",
       seeError: false,
       errorMessage: "",
-      contact: false,
-      about: false,
-      work: false,
     };
   }
 
@@ -82,6 +86,7 @@ class App extends Component {
   };
 
   DeactivateMenu = (isVisible) => {
+    console.log(isVisible);
     if (this.state.bubbleMenu === true && this.state.menuVisible === true) {
       this.setState({ bubbleMenu: false });
     }
@@ -103,12 +108,18 @@ class App extends Component {
     }
   };
 
-  scrollTo = (pageNumber, button) => {
-    this.parallax.scrollTo(pageNumber);
+  scrollTo = (name, button) => {
+    scroller.scrollTo(name, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInCubic",
+    });
 
     if (button === "MenuBubble") {
       this.setState({ bubbleMenu: false });
       this.setState({ menuVisible: true });
+    } else if (button === "goBackBubble") {
+      scroll.scrollToTop();
     } else {
       this.setState({ menuVisible: false });
     }
@@ -140,8 +151,16 @@ class App extends Component {
   };
 
   render() {
-    const scrollToMobile = (pageNumber) => {
-      this.parallax.scrollTo(pageNumber);
+    const scrollToMobile = (name) => {
+      if (name === "Homepage") {
+        scroll.scrollToTop();
+      } else {
+        scroller.scrollTo(name, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInCubic",
+        });
+      }
     };
 
     const {
@@ -160,75 +179,74 @@ class App extends Component {
 
     return (
       <>
-        {/* Error message for contact */}
-        {this.state.seeError && (
-          <Error
-            message={this.state.errorMessage}
-            switchError={this.switchError}
-          />
-        )}
+        <div>
+          {/* Error message for contact */}
+          {this.state.seeError && (
+            <Error
+              message={this.state.errorMessage}
+              switchError={this.switchError}
+            />
+          )}
 
-        {/* Modal for work */}
+          {/* Modal for work */}
 
-        {this.state.modalVisible === true && (
-          <div className="background-modal">
-            <div className="container-modal">
-              <motion.div
-                whileHover={{ backgroundColor: "#388CCA" }}
-                onClick={this.closeModal}
-                className="container-modal__close"
-              >
-                X
-              </motion.div>
-              <div className="container-modal__image">
-                <Image large={large.large}></Image>
-                <h2 className="container-modal__title">{title.title}</h2>
-              </div>
-              <p className="container-modal__text ">{parse(`${text.text}`)}</p>
+          {this.state.modalVisible === true && (
+            <div className="background-modal">
+              <div className="container-modal">
+                <motion.div
+                  whileHover={{ backgroundColor: "#388CCA" }}
+                  onClick={this.closeModal}
+                  className="container-modal__close"
+                >
+                  X
+                </motion.div>
+                <div className="container-modal__image">
+                  <Image large={large.large}></Image>
+                  <h2 className="container-modal__title">{title.title}</h2>
+                </div>
+                <p className="container-modal__text ">
+                  {parse(`${text.text}`)}
+                </p>
 
-              <div className="container-modal__callcontainer">
-                {website.website !== "" && (
-                  <motion.a
-                    href={website.website}
-                    target="_blank"
-                    whileHover="menu"
-                    className="container-modal__button"
-                  >
-                    <p>Site web</p>
-                    <motion.span
-                      variants={pathVariantsMenu}
-                      className="container-modal__span"
-                    ></motion.span>
-                  </motion.a>
-                )}
+                <div className="container-modal__callcontainer">
+                  {website.website !== "" && (
+                    <motion.a
+                      href={website.website}
+                      target="_blank"
+                      whileHover="menu"
+                      className="container-modal__button"
+                    >
+                      <p>Site web</p>
+                      <motion.span
+                        variants={pathVariantsMenu}
+                        className="container-modal__span"
+                      ></motion.span>
+                    </motion.a>
+                  )}
 
-                {github.github !== "" && (
-                  <motion.a
-                    href={github.github}
-                    target="_blank"
-                    whileHover="menu"
-                    className="container-modal__button"
-                  >
-                    <p>Github</p>
-                    <motion.span
-                      variants={pathVariantsMenu}
-                      className="container-modal__span container-modal__span--blue"
-                    ></motion.span>
-                  </motion.a>
-                )}
+                  {github.github !== "" && (
+                    <motion.a
+                      href={github.github}
+                      target="_blank"
+                      whileHover="menu"
+                      className="container-modal__button"
+                    >
+                      <p>Github</p>
+                      <motion.span
+                        variants={pathVariantsMenu}
+                        className="container-modal__span container-modal__span--blue"
+                      ></motion.span>
+                    </motion.a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Menu for mobile */}
-        <Breakpoint
-          activated={this.state.activated}
-          scrollToMobile={scrollToMobile}
-        ></Breakpoint>
+          {/* Menu for mobile */}
 
-        {/* mainpage */}
-        <div className="background-noblob">
+          {/* mainpage */}
+          {/* <div className="background-noblob"> */}
           <BlobBlue
             width="50"
             height="50"
@@ -238,37 +256,31 @@ class App extends Component {
             scrollTo={this.scrollTo}
           />
 
-          <div className="display-menu">
-            <BlobBlue
-              width="100"
-              height="100"
-              title="Menu"
-              class="MenuBubble"
-              isVisible={this.state.bubbleMenu}
-              scrollTo={this.scrollTo}
-            />
-          </div>
-          <Parallax
-            pages={4}
-            scrolling={true}
-            ref={(ref) => (this.parallax = ref)}
-          >
-            <VisibilitySensor
-              minTopValue={550}
-              partialVisibility={true}
-              onChange={this.DeactivateMenu}
-            >
-              <ParallaxLayer offset={0} speed={0}>
+          <BlobBlue
+            width="100"
+            height="100"
+            title="Menu"
+            class="MenuBubble"
+            isVisible={this.state.bubbleMenu}
+            scrollTo={this.scrollTo}
+          />
+
+          <div className="hoc">
+            <div className="main-page">
+              <VisibilitySensor
+                minTopValue={550}
+                partialVisibility={true}
+                onChange={this.DeactivateMenu}
+              >
                 <Homepage
                   scrollTo={this.scrollTo}
                   switchMenu={this.switchMenu}
                   menuVisible={this.state.menuVisible}
                 />
-              </ParallaxLayer>
-            </VisibilitySensor>
-
-            <Suspense fallback={renderLoad()}>
-              <ParallaxLayer offset={1} speed={0}>
+              </VisibilitySensor>
+            </div>
+            <div className="main-page">
+              <Suspense fallback={renderLoad()}>
                 <div className="background-black"></div>
 
                 <VisibilitySensor
@@ -278,11 +290,10 @@ class App extends Component {
                 >
                   <Work switchModal={this.switchModal} />
                 </VisibilitySensor>
-              </ParallaxLayer>
-            </Suspense>
-
-            <Suspense fallback={renderLoad()}>
-              <ParallaxLayer offset={2} speed={0}>
+              </Suspense>
+            </div>
+            <div className="main-page">
+              <Suspense fallback={renderLoad()}>
                 <VisibilitySensor
                   minTopValue={550}
                   partialVisibility={true}
@@ -290,11 +301,10 @@ class App extends Component {
                 >
                   <About />
                 </VisibilitySensor>
-              </ParallaxLayer>
-            </Suspense>
-
-            <Suspense fallback={renderLoad()}>
-              <ParallaxLayer offset={3} speed={0}>
+              </Suspense>
+            </div>{" "}
+            <div className="main-page">
+              <Suspense fallback={renderLoad()}>
                 <div className="background-black"></div>
                 <VisibilitySensor
                   minTopValue={550}
@@ -303,9 +313,13 @@ class App extends Component {
                 >
                   <Contact errorMessage={this.errorMessage} />
                 </VisibilitySensor>
-              </ParallaxLayer>
-            </Suspense>
-          </Parallax>
+              </Suspense>
+            </div>
+          </div>
+          <Breakpoint
+            activated={this.state.activated}
+            scrollToMobile={scrollToMobile}
+          ></Breakpoint>
         </div>
       </>
     );

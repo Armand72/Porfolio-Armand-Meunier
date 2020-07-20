@@ -10,7 +10,7 @@ const BlobBlue = (props) => {
   };
 
   const scrolling = () => {
-    props.scrollTo(0, props.class);
+    props.scrollTo("", props.class);
   };
   return (
     <>

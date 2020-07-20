@@ -50,8 +50,28 @@
   }
 }
 
-.mobile-parent {
-  position: fixed;
-  height: 50px;
-  bottom: 0;
+.main-page {
+  position: relative;
+  height: 100vh;
+  background-color: $mainColor;
+  padding: 5px 0px;
+}
+
+.hoc {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  & > :nth-child(3) {
+    height: auto;
+  }
+
+  & > :nth-child(4) {
+    height: auto;
+    padding-bottom: 50px;
+  }
+}
+
+.resize-work {
+  height: 80vh;
 }

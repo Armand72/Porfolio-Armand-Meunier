@@ -86,7 +86,11 @@ class Contact extends Component {
       <>
         <PartTitle title="Contact" />
 
-        <form className="contact-container" onSubmit={this.submitForm}>
+        <form
+          className="contact-container"
+          onSubmit={this.submitForm}
+          name="Contact"
+        >
           <div className="contact-container__top">
             <div className="contact-container__items">
               <p className="contact-container__title">Nom *</p>

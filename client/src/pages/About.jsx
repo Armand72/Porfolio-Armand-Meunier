@@ -63,7 +63,7 @@ class About extends Component {
 
   render() {
     return (
-      <>
+      <div name="About">
         <PartTitle title="À propos" />
         <div className="container-about">
           <div className="container-about__paragraph">
@@ -90,7 +90,7 @@ class About extends Component {
             ))}
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
