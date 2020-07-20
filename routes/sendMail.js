@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-router.post("/api/sendmail", (req, res) => {
+router.post("/sendmail", (req, res) => {
   const user = req.body;
 
   console.log(user);

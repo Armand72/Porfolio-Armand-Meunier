@@ -12,6 +12,7 @@
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
+  "proxy": "http://localhost:3000",
   "author": "",
   "license": "ISC",
   "dependencies": {
