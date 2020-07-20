@@ -7,17 +7,17 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com", // hostname
-  secureConnection: false,
+  service: "Gmail",
+  // secureConnection: false,
 
-  port: 587, // port for secure SMTP
+  // port: 587, // port for secure SMTP
   auth: {
-    user: "armandmeunier@hotmail.fr",
+    user: "armandmeunierdev@gmail.com",
     pass: "cogitoergosum72%",
   },
-  tls: {
-    ciphers: "SSLv3",
-  },
+  // tls: {
+  //   ciphers: "SSLv3",
+  // },
 });
 
 router.post("/sendmail", (req, res) => {
