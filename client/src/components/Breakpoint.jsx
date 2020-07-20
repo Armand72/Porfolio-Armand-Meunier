@@ -30,7 +30,7 @@ const useViewport = () => {
 const MobileMenu = (props) => (
   <div className="mobile-menu">
     <div
-      onClick={() => props.scrollToMobile(0)}
+      onClick={() => props.scrollToMobile("Homepage")}
       className={props.activated === "home" && "menu-highlight"}
     >
       <div>
@@ -38,7 +38,7 @@ const MobileMenu = (props) => (
       </div>
     </div>
     <div
-      onClick={() => props.scrollToMobile(1)}
+      onClick={() => props.scrollToMobile("Portfolio")}
       className={props.activated === "portfolio" && "menu-highlight"}
     >
       <div>
@@ -46,7 +46,7 @@ const MobileMenu = (props) => (
       </div>
     </div>
     <div
-      onClick={() => props.scrollToMobile(2)}
+      onClick={() => props.scrollToMobile("About")}
       className={props.activated === "about" && "menu-highlight"}
     >
       <div>
@@ -54,7 +54,7 @@ const MobileMenu = (props) => (
       </div>
     </div>
     <div
-      onClick={() => props.scrollToMobile(3)}
+      onClick={() => props.scrollToMobile("Contact")}
       className={props.activated === "message" && "menu-highlight"}
     >
       <div>
@@ -81,9 +81,7 @@ const MyComponent = (props) => {
 export default function Breakpoint(activated) {
   return (
     <ViewportProvider>
-      <div className="mobile-parent">
-        <MyComponent activated={activated} />
-      </div>
+      <MyComponent activated={activated} />
     </ViewportProvider>
   );
 }

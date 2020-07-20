@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import Cube from "../components/menu/cube/Cube";
 import { motion } from "framer-motion";
 import Fullname from "../components/Fullname";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 class Homepage extends Component {
   constructor(props) {
@@ -33,7 +42,7 @@ class Homepage extends Component {
 
     return (
       <>
-        <div className="container-fullname">
+        <div className="container-fullname" name="Homepage">
           <Fullname />
         </div>
         <div className="container-fullname__mobile">
@@ -62,24 +71,31 @@ class Homepage extends Component {
                   <span> Node </span> / <span>MySql</span>.
                 </p>
                 <div className="container-calltoaction">
-                  <motion.div
-                    whileHover="menu"
-                    onClick={() => this.props.scrollTo(1)}
-                    className="link-work"
+                  <Link
+                    to="Portfolio"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={1000}
                   >
-                    Portfolio
-                    <motion.span
-                      variants={pathVariantsMenu}
-                      className="spanMenu"
-                    ></motion.span>
-                  </motion.div>
-
+                    <motion.div
+                      whileHover="menu"
+                      onClick={() => this.props.scrollTo("Portfolio")}
+                      className="link-work"
+                    >
+                      <p className="link-title">Portfolio</p>
+                      <motion.span
+                        variants={pathVariantsMenu}
+                        className="spanMenu"
+                      ></motion.span>
+                    </motion.div>
+                  </Link>
                   <motion.div
                     whileHover="menu"
                     onClick={this.downloadFile}
                     className="link-work"
                   >
-                    CV
+                    <p className="link-title">CV</p>
                     <motion.span
                       variants={pathVariantsMenu}
                       className="spanCv"
@@ -114,9 +130,9 @@ class Homepage extends Component {
                 <motion.li
                   onMouseEnter={() => this.iconChange("hammer")}
                   whileHover="menu"
-                  onClick={() => this.props.scrollTo(1)}
+                  onClick={() => this.props.scrollTo("Portfolio")}
                 >
-                  Portfolio
+                  <p className="link-title">Portfolio</p>
                   <motion.span
                     variants={pathVariantsMenu}
                     className="spanMenu"
@@ -126,9 +142,9 @@ class Homepage extends Component {
                 <motion.li
                   onMouseEnter={() => this.iconChange("about")}
                   whileHover="menu"
-                  onClick={() => this.props.scrollTo(2)}
+                  onClick={() => this.props.scrollTo("About")}
                 >
-                  À propos
+                  <p className="link-title"> À propos </p>
                   <motion.span
                     variants={pathVariantsMenu}
                     className="spanMenu"
@@ -137,9 +153,9 @@ class Homepage extends Component {
                 <motion.li
                   onMouseEnter={() => this.iconChange("email")}
                   whileHover="menu"
-                  onClick={() => this.props.scrollTo(3)}
+                  onClick={() => this.props.scrollTo("Contact")}
                 >
-                  Contact
+                  <p className="link-title">Contact</p>
                   <motion.span
                     variants={pathVariantsMenu}
                     className="spanMenu"

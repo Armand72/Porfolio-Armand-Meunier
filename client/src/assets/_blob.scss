@@ -1,61 +1,5 @@
-.blobBlueOne {
-  height: auto;
-  position: absolute;
-  right: 0;
-  top: 45%;
-  transform: translate(0%, -50%);
-  z-index: -1;
-}
-
-.blobBlueTwo {
-  position: absolute;
-  right: 15%;
-  top: 30%;
-  cursor: pointer;
-}
-
-.blobBlueTwo__text {
-  position: absolute;
-  color: white;
-  font-family: $titleFont;
-  font-size: 4.5rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
 .blobCursor {
   z-index: 9999;
-}
-
-.containerBlobOne {
-  position: absolute;
-  right: 50%;
-}
-
-.containerBlobTwo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
-.containerBlobThree {
-  position: absolute;
-  right: 2%;
-  bottom: 2%;
-}
-
-.blobBlueThree {
-  @media (max-width: $large) {
-    display: none;
-  }
-  position: absolute;
-  left: 0%;
-  bottom: -1%;
-  z-index: 50;
 }
 
 .blobBlue {
@@ -63,7 +7,7 @@
     display: none;
   }
   z-index: 1;
-  position: absolute;
+  position: fixed;
 
   cursor: pointer;
 

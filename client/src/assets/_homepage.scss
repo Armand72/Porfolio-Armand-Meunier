@@ -6,7 +6,7 @@
   @media (max-width: $large) {
     width: 100%;
     padding: 20px 20px 20px 20px;
-    height: 95vh;
+    // height: 95vh;
   }
   position: absolute;
   right: 0;
@@ -258,7 +258,12 @@
   left: 0;
   text-align: center;
   border-radius: 50px;
-  z-index: -1;
+  z-index: 9000;
+}
+
+.link-title {
+  position: relative;
+  z-index: 9001;
 }
 
 .container-calltoaction {
@@ -281,7 +286,7 @@
   left: 0;
   text-align: center;
   border-radius: 50px;
-  z-index: -1;
+  z-index: 9000;
 }
 
 .scroll-wrapper {
@@ -333,8 +338,8 @@
 }
 
 .mobile-menu {
-  position: absolute;
-  z-index: 5000;
+  position: fixed;
+  z-index: 9999;
   bottom: 0;
   height: 50px;
   background-color: $importantColor;

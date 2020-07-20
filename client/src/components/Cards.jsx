@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Image = styled.div`
+  @media (max-width: 576px) {
+    height: 400px;
+    border-radius: 25px;
+  }
   background: url(${(props) => props.img}) no-repeat;
 
   margin: auto;

@@ -70,10 +70,6 @@ const imageData = [
   },
 ];
 
-// function filterWork(obj) {
-//   if (obj.category )
-// }
-
 const checkWidth = () => {
   const widthContainer = document.getElementById("slider").clientWidth;
   const widthCard = document.getElementById("card").clientWidth;
@@ -98,10 +94,6 @@ class Work extends Component {
     this.setState({ category });
   };
 
-  // updatewidth = (leftConstraint) => {
-  //   this.setState({ leftConstraint });
-  // };
-
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevState.category !== this.state.category) {
       const width = checkWidth();
@@ -109,9 +101,6 @@ class Work extends Component {
       this.setState({ leftConstraint: width }, () => {
         this.reset();
       });
-
-      // var div = document.getElementById("draggable");
-      // div.style.transform = "translateX(0px)";
     }
   }
 
@@ -143,7 +132,7 @@ class Work extends Component {
 
     return (
       <>
-        <div className="container-work">
+        <div className="container-work" name="Portfolio">
           <PartTitle title="Portfolio" />
           <div className="container-work__main">
             <div className="selector-container">
