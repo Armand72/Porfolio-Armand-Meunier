@@ -12,7 +12,7 @@
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "https://armand-meunier.herokuapp.com",
   "author": "",
   "license": "ISC",
   "dependencies": {

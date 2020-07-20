@@ -27,7 +27,7 @@
   "resolutions": {
     "babel-jest": "^24.8.0"
   },
-  "proxy": "http://localhost:3002",
+  "proxy": "https://armand-meunier.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",
