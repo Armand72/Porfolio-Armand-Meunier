@@ -294,7 +294,7 @@
   left: 50%;
   bottom: 3%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 0;
 }
 .mouse {
   @media (max-width: $tablet) {
@@ -320,6 +320,7 @@
     height: 0.35rem;
     border-radius: 10rem;
     animation: scrollMouse 1.2s linear infinite;
+    z-index: 9999;
   }
 
   &:before {
@@ -334,6 +335,7 @@
     height: 3rem;
     background-color: $mainColor;
     border-radius: 10rem;
+    z-index: 0;
   }
 }
 
@@ -343,7 +345,7 @@
   bottom: 0;
   height: 50px;
   background-color: $importantColor;
-  // border-top: 2px solid $highlight;
+
   width: 100vw;
   display: flex;
   justify-content: space-around;
