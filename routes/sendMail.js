@@ -20,9 +20,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-router.post("/sendmail", (req, res) => {
+router.post("/api/sendmail", (req, res) => {
   const user = req.body;
 
+  console.log(user);
   const htmlMessage = `<h1>nom:${user.fullname}  </h1>
     <h2>adresse email : ${user.email}</h2>
     <h2>Numéro de téléphone: ${user.phonenumber}</h2>
@@ -37,7 +38,6 @@ router.post("/sendmail", (req, res) => {
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
-    console.log("here", error, info);
     if (error) {
       return res.status(501).json(error);
     }

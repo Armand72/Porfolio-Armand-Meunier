@@ -49,7 +49,7 @@ class Contact extends Component {
 
     if (fullname !== "" && email !== "" && message !== "") {
       this.setState({ sending: true });
-      fetch("https://armand-meunier.herokuapp.com/sendmail", {
+      fetch("/api/sendmail", {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
