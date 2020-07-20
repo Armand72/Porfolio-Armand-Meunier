@@ -78,7 +78,6 @@ class App extends Component {
   };
 
   DeactivateMenu = (isVisible) => {
-    console.log(isVisible);
     if (this.state.bubbleMenu === true && this.state.menuVisible === true) {
       this.setState({ bubbleMenu: false });
     }

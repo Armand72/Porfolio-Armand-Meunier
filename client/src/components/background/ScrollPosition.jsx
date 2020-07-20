@@ -4,7 +4,7 @@ const ScrollPosition = () => {
   const [scrollPosition, setSrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.pageYOffset;
-    console.log(position);
+
     setSrollPosition(position);
   };
 

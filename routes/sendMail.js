@@ -23,7 +23,6 @@ const transporter = nodemailer.createTransport({
 router.post("/sendmail", (req, res) => {
   const user = req.body;
 
-  console.log(user);
   const htmlMessage = `<h1>nom:${user.fullname}  </h1>
     <h2>adresse email : ${user.email}</h2>
     <h2>Numéro de téléphone: ${user.phonenumber}</h2>
