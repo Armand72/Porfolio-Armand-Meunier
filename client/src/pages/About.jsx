@@ -3,54 +3,54 @@ import PartTitle from "../components/PartTitle";
 
 const skillData = [
   {
-    url: "./html-5.webp",
+    url: "./html-5.png",
     title: "HTML5",
   },
   {
-    url: "./css.webp",
+    url: "./css.png",
     title: "CSS3",
   },
 
   {
-    url: "./sass.webp",
+    url: "./sass.png",
     title: "Sass",
   },
   {
-    url: "./javascript.webp",
+    url: "./javascript.png",
     title: "Javascript",
   },
   {
-    url: "./react.webp",
+    url: "./react.png",
     title: "React",
   },
   {
-    url: "./vue.webp",
+    url: "./vue.png",
     title: "Vue",
   },
 
   {
-    url: "./mysql.webp",
+    url: "./mysql.png",
     title: "MySQL",
   },
   {
-    url: "./nodejs.webp",
+    url: "./nodejs.png",
     title: "Node Js",
   },
 
   {
-    url: "./github.webp",
+    url: "./github.png",
     title: "Github",
   },
   {
-    url: "./gitlab.webp",
+    url: "./gitlab.png",
     title: "Gitlab",
   },
   {
-    url: "./agile.webp",
+    url: "./agile.png",
     title: "Scrum",
   },
   {
-    url: "./jira.webp",
+    url: "./jira.png",
     title: "Jira",
   },
 ];
