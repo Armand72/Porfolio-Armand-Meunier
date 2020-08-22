@@ -51,8 +51,8 @@ const imageData = [
       "Projet permettant de télécharger des fichiers <span>mp3</span> à partir <span>d'une vidéo Youtube</span>. La librairie ytdl-core permet à partir du lien de récupérer le fichier <span>sous divers formats</span> mais aussi les données sur la vidéo que l'on peut réutiliser sur la partie front-end.",
     summary:
       "Projet permettant de télécharger des fichiers mp3 à partir d'une vidéo Youtube.",
-    github: "https://ytdl-mp3-downloader.herokuapp.com",
-    website: "https://github.com/Armand72/youtube-downloader",
+    github: "https://github.com/Armand72/youtube-downloader ",
+    website: "https://ytdl-mp3-downloader.herokuapp.com",
     skills: "React / ytdl-core",
     category: "personal",
   },
@@ -76,7 +76,7 @@ const imageData = [
     text:
       "Ce projet a été réalisé afin de présenter de manière précise et concise mon profil à travers <span>une UX</span> permettant à l'utilisateur d'avoir accès directement aux <span>informations pertinentes</span> (boutons call to action, slider, position des différentes catégories). React a été utilisé pour ce projet ainsi que <span>node et nodemailer</span> pour <span>le formulaire de contact</span>. Les animations ont été réalisés avec <span>framer-motion</span>.",
     summary: "Le portfolio ici présent.",
-    github: "",
+    github: "https://github.com/Armand72/Porfolio-Armand-Meunier",
     website: "",
     skills: "React / Node Js / Sass / framer-motion",
     category: "personal",

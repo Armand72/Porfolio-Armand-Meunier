@@ -7,14 +7,16 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
+  host: "gmail",
   secure: false,
   requireTLS: true,
-  port: 587,
+  port: 25,
   auth: {
     user: EMAIL,
     pass: PASSWORD,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
