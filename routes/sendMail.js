@@ -7,16 +7,13 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  name: "smtp.mail.yahoo.com",
-  port: 465,
-  host: "Yahoo",
+  name: "Gmail",
+  port: 587,
   secure: true,
   auth: {
-    user: "armandmeunierdev@yahoo.com",
-    pass: "fabrilo72",
+    user: "armandmeunierdeveloper@gmail.com",
+    pass: "cogitoergosum72%",
   },
-  debug: false,
-  logger: true,
 });
 
 router.post("/sendmail", (req, res) => {
