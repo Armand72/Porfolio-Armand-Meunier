@@ -7,12 +7,10 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: true,
+  service: "hotmail",
   auth: {
-    user: EMAIL,
-    pass: PASSWORD,
+    user: "armandmeunierdev@hotmail.com",
+    pass: "cogitoergosum72%",
   },
   tls: { rejectUnauthorized: false },
 });
