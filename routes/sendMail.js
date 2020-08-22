@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     type: "OAuth2",
-    user: EMAIL, //your gmail account you used to set the project up in google cloud console"
+    user: "armandmeunierdeveloper@gmail.com", //your gmail account you used to set the project up in google cloud console"
     clientId:
       "1042211473852-g1ejd8ecl2bj26gs2b6ldiau4usj7moc.apps.googleusercontent.com",
     clientSecret: "ec7y4jSkXXzFDtfDFIrne1vg",
