@@ -7,22 +7,20 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  service: "Gmail",
-  // secureConnection: false,
-
-  // port: 587, // port for secure SMTP
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  requireTLS: true,
+  port: 587,
   auth: {
     user: EMAIL,
     pass: PASSWORD,
   },
-  // tls: {
-  //   ciphers: "SSLv3",
-  // },
 });
 
 router.post("/sendmail", (req, res) => {
   const user = req.body;
-
+  console.log(user);
   const htmlMessage = `<h1>nom:${user.fullname}  </h1>
     <h2>adresse email : ${user.email}</h2>
     <h2>Numéro de téléphone: ${user.phonenumber}</h2>
