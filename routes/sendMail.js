@@ -7,14 +7,16 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
+  host: "smtp.mail.yahoo.com",
   port: 465,
-  secure: true, // use SSL
+  service: "yahoo",
+  secure: false,
   auth: {
-    user: "armandmeunier@zohomail.eu",
+    user: "armandmeunierdev@yahoo.com",
     pass: "fabrilo72",
   },
-  tls: { rejectUnauthorized: false },
+  debug: false,
+  logger: true,
 });
 
 router.post("/sendmail", (req, res) => {
