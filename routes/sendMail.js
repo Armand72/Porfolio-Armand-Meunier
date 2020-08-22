@@ -14,6 +14,7 @@ const transporter = nodemailer.createTransport({
     user: EMAIL,
     pass: PASSWORD,
   },
+  tls: { rejectUnauthorized: false },
 });
 
 router.post("/sendmail", (req, res) => {
