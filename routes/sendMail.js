@@ -7,15 +7,12 @@ const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com", // hostname
-  secureConnection: false, // TLS requires secureConnection to be false
-  port: 587, // port for secure SMTP
-  tls: {
-    ciphers: "SSLv3",
-  },
+  host: "smtp.zoho.com",
+  port: 465,
+  secure: true, // use SSL
   auth: {
-    user: "armandmeunierdev@hotmail.com",
-    pass: "cogitoergosum72%",
+    user: "armandmeunier@zohomail.eu",
+    pass: "fabrilo72",
   },
   tls: { rejectUnauthorized: false },
 });
