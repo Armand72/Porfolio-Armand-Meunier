@@ -6,12 +6,12 @@ const OAuth2 = google.auth.OAuth2;
 require("dotenv").config();
 
 const EMAIL = process.env.EMAIL;
-const PASSWORD = process.env.PASSWORD;
 
-const myOAuth2Client = new OAuth2(
-  "1042211473852-g1ejd8ecl2bj26gs2b6ldiau4usj7moc.apps.googleusercontent.com",
-  "ec7y4jSkXXzFDtfDFIrne1vg"
-);
+const CLIENTID = process.env.CLIENTID;
+const SECRET = process.env.SECRET;
+const REFRESH = process.env.REFRESH;
+
+const myOAuth2Client = new OAuth2(CLIENTID, SECRET);
 
 myOAuth2Client.setCredentials({
   refresh_token:
@@ -25,11 +25,9 @@ const transporter = nodemailer.createTransport({
   auth: {
     type: "OAuth2",
     user: "armandmeunierdeveloper@gmail.com", //your gmail account you used to set the project up in google cloud console"
-    clientId:
-      "1042211473852-g1ejd8ecl2bj26gs2b6ldiau4usj7moc.apps.googleusercontent.com",
-    clientSecret: "ec7y4jSkXXzFDtfDFIrne1vg",
-    refreshToken:
-      "1//04evVwqKrCA-gCgYIARAAGAQSNwF-L9IrxS_dJASZGZdzaNQkVBY6cdaOBK7n3j3nfnvQh4dQWKlPF3IzuIOeJLmR-_oV-wP7lcE",
+    clientId: CLIENTID,
+    clientSecret: SECRET,
+    refreshToken: REFRESH,
     accessToken: myAccessToken,
   },
 });
