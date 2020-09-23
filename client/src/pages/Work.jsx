@@ -19,6 +19,18 @@ const imageData = [
     category: "dev",
   },
   {
+    title: "Pic wik toys clone",
+    img: "/picwik.png",
+    large: "/picwik.png",
+    text:
+      "Projet clonant le site de e-commerce pour jouet. Cela m'a permis de m'entraîner sur <span>mongoDB, typescript, les hooks et stripe</span>. J'ai pu créer un projet à partir de nouvelles technologies et de comprendre le fonctionnement des API de paiement.",
+    summary: "",
+    github: "https://github.com/Armand72/pic-wik-toys-clone",
+    website: "https://pic-wik-toys-clone.herokuapp.com/",
+    skills: "React / Node Js / Stripe / MongoDB / Typescript",
+    category: "personal",
+  },
+  {
     title: "En voyage vers soi",
     img: "/envoyageverssoiLarge.jpg",
     large: "/envoyageverssoiLarge.jpg",
@@ -30,7 +42,6 @@ const imageData = [
     skills: "React / Node Js / Express / Github / Scrum",
     category: "dev",
   },
-
   {
     title: "Babysteps",
     img: "/babystepsLarge.jpg",

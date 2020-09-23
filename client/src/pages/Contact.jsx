@@ -61,7 +61,6 @@ class Contact extends Component {
           message,
         }),
       }).then((res) => {
-        console.log(res);
         this.setState({ sending: false });
         if (res.ok) {
           this.props.errorMessage("Message envoyé!");
